@@ -1,4 +1,4 @@
-var magicWeapon = 1;
+<script>
 
 function mansionUp() {
     var chest = prompt("A chest is in the upper room. Do you dare to open it? Enter yes or no.").toUpperCase();
@@ -32,14 +32,14 @@ function leftEnterMansion() {
 }
 
 function leftFarther() {
-    var goBack = prompt("You find a chest of jewels. Now do you want to go home? Enter home or farther.").toUpperCase();
+    var goBack = prompt("You find a group of dead bandits, likely killed by the bear you just defeated. \n Do you loot them, or move on ? Enter loot or move.").toUpperCase();
     
     switch(goBack) {
-        case "HOME":
-            alert("Wise choice. You sell the jewels and become a billionaire.");
+        case "LOOT":
+            alert("A wise move. The bandits' pockets are stuffed with gold. You return home with your fortune. You win!");
         break;
-        case "FARTHER":
-            alert("You lose your way. Game Over.");
+        case "MOVE":
+            alert("You bypass the bandits corpses and move farther into the woods. Eventually, a group of bears sniff you out.  You draw your sword to ward them off, but this time there are too many. Game over");
         break;
         default:
             alert("Please enter home or farther.");
@@ -48,32 +48,31 @@ function leftFarther() {
 }
 
 function defeatBear() {
-    var goFarther = prompt("Do you want to go farther or go home and sell the bear skin? Enter home or farther.").toUpperCase();
+    var goFarther = prompt("You notice the bear's den nearby. Do you explore it for treasure? Enter yes or no").toUpperCase();
     
     switch(goFarther) {
-        case "HOME":
-            alert("You sell the bear skin for half as much as you had hoped. You regret your decision.");
+        case "YES":
+            alert("You find food and bear skins inside. You gather what you can carry, and return home a wealthy man. You win!");
         break;
-        case "FARTHER":
+        case "NO":
             leftFarther();
         break;
         default:
-            alert("Please enter home or farther.");
+            alert("Please enter yes or no.");
             goFarther();
     }
 }
 
 function leftSafe() {
-    var weaponChoice = prompt("A wild bear appears on the trail! Luckily you have a secret weapon. It can be used 1 time. Do you use it? Enter yes or no.").toUpperCase();
+    var weaponChoice = prompt("A wild bear appears on the trail! Do you draw your sword? Enter fight or run.").toUpperCase();
     
     switch(weaponChoice) {
-        case "YES":
-            alert("Excellent. You defeated the bear.");
-            secretWeapon--;
+        case "FIGHT":
+            alert("The bear rushes at you, shaking the earth with its enormous weight. Unafraid, you deliver a well-timed blow with your sword, wounding it gravely. It retreats back into the forest. ");
             defeatBear();
         break;
-        case "NO":
-            alert("Oops. The bear got you.");
+        case "RUN":
+            alert("You die a coward's death. The bear chases you down and eats your face.");
         break;
         default:
             alert("Please enter yes or no.");
@@ -82,7 +81,7 @@ function leftSafe() {
 }
 
 function goLeft() {
-    var mansionChoose = prompt("You choose left. A few miles down the road, an abandoned stone mansion appears! Do you want to go in? Enter yes or no.").toUpperCase();
+    var mansionChoose = prompt("You choose the left path. Further down the road, a great castle looms. Do you go inside? Enter yes or no.").toUpperCase();
     
     switch(mansionChoose) {
         case "YES":
@@ -98,18 +97,18 @@ function goLeft() {
 }
 
 function wolfGone() {
-    alert("The wolf is gone. You have safely survived an encounter with a creature in this forest. You become famous.");
+    alert("The wolf has moved on, leading its pack elsewhere. You find a path home free from danger. You win! ");
 }
 
 function findWolf() {
-    var useWeapon = prompt("You find a wolf! Do you choose to use your secret weapon? It can only be used once. Enter yes or no.").toUpperCase();
+    var useWeapon = prompt("You find a wolf! Do you draw your sword? Enter yes or no.").toUpperCase();
     
     switch(useWeapon) {
         case "YES":
-            alert("The wolf flings the weapon back at you! Game Over");
+            alert("The wolf accepts your challenge and lunges at you. With a mighty swing you kill the wolf, \n but not before it wounds your mortally. Game over!");
         break;
         case "NO":
-            alert("Good choice. The wolf passes by.");
+            alert("Caution prevails. The wolf decides it can find an easier meal.");
             wolfGone();
         break;
         default:
@@ -118,12 +117,12 @@ function findWolf() {
 }
 
 function grabSwamp() {
-    alert("Excellent decision. You safely float to the other side."); 
+    alert("Well done hero. You are able to pull yourself up on the far bank."); 
     findWolf();
 }
 
 function swimSwamp() {
-    alert("Why did you swim? This swamp is alligator infested! Game Over.");    
+    alert("Fool! You never learned how to swim. Game over! ");    
 }
 
 function fallSwamp() {
@@ -163,14 +162,14 @@ function enterCave() {
 }
 
 function noCave() {
-    var onward = prompt("Do you want to go farther? Enter yes or no.").toUpperCase();
+    var onward = prompt("You are wise to bypass the cave. The night gets darker. Do you wait for daylight? Enter yes or no.").toUpperCase();
     
     switch(onward) {
         case "YES":
-            alert("Now you're lost. Game Over.");
+            alert("Foolish. You are discovered by bandits, who rob you in your sleep. Without a map, you cannot return home. Game over.");
         break;
         case "NO":
-            alert("I'm proud of you. You made the right choice. You Win!");
+            alert("You keep moving, using the moonlight to read your map. After a long journey, you return home safely by morning. Well done!");
         break;
         default:
             alert("Please enter yes or no.");
@@ -212,3 +211,5 @@ function adventure() {
 
 adventure();
 
+
+</script>
