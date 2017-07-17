@@ -1,5 +1,4 @@
-<script>
-var BearSpray = 1;
+var magicWeapon = 1;
 
 function mansionUp() {
     var chest = prompt("A chest is in the upper room. Do you dare to open it? Enter yes or no.").toUpperCase();
@@ -128,7 +127,7 @@ function swimSwamp() {
 }
 
 function fallSwamp() {
-    var swim = prompt("The bridge breaks! Do you swim to the other side or grab on to a floating piece of wood? Enter grab or swim.").toUpperCase();
+    var swim = prompt("The current is too fast! You can't fight it. Do you let the river take you or grab a log on the shore? \nEnter grab or swim.").toUpperCase();
     
     switch(swim) {
         case "SWIM":
@@ -144,7 +143,7 @@ function fallSwamp() {
 }
 
 function rightSafe() {
-    var caveChoose = prompt("A cave appears. Do you enter it? Yes or no.").toUpperCase();
+    var caveChoose = prompt("As you turn back from the river, you notice a dimly lit cave. Do you seek shelter inside? \n Yes or no.").toUpperCase();
     
     switch(caveChoose) {
         case "YES":
@@ -160,7 +159,7 @@ function rightSafe() {
 }
 
 function enterCave() {
-    alert("It's dark. You find a lantern and light it. You wander around but get lost. Game Over.");    
+    alert("The light is coming from a bandit's fire. They attack you on sight. Skilled warrior though you are, \n there are simply too many. Game over.");    
 }
 
 function noCave() {
@@ -180,7 +179,7 @@ function noCave() {
 }
 
 function goRight() {
-    var bridgeChoose = prompt("A few minutes down the trail, a swamp appears. There is a rickety bridge leading across. Do you cross it? Enter yes or no.").toUpperCase();
+    var bridgeChoose = prompt("Ahead is a wide river with a swift current. Do you attempt to cross? \nEnter yes or no.").toUpperCase();
     
     switch(bridgeChoose) {
         case "YES": 
@@ -196,7 +195,7 @@ function goRight() {
 }
 
 function adventure() {
-    var leftOrRight = prompt("You are trekking through a forest. You come to a fork in the road. Do you go left or right?").toUpperCase();
+    var leftOrRight = prompt("You are an old warrior returning home from battle. The road diverges as you near your home. \nDo you go left or right?").toUpperCase();
     
     switch(leftOrRight) {
         case "LEFT":
@@ -213,5 +212,3 @@ function adventure() {
 
 adventure();
 
-
-</script>
