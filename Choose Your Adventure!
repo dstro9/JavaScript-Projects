@@ -1,32 +1,47 @@
 <script>
 
-function mansionUp() {
-    var chest = prompt("A chest is in the upper room. Do you dare to open it? Enter yes or no.").toUpperCase();
+
+
+function TreasureRiddle() {
+	var riddle = prompt("I am the keeper of this castle, trespasser! If you would like this treasure, you must answer this riddle! \n What tastes far better than it smells? ");
+    
+    	switch(riddle) {
+        	case "A tongue":
+            	alert("The spectre smiles and fades. You take the diamonds and return home with a kingly fortune. You win!");
+                break;
+            default:
+            	alert("The spectre laughs cruelly and touches you. You start to feel cold, very cold...Game over.");
+		}
+}
+        
+function CastleUp() {
+    var chest = prompt("You climb to the highest point in the castle. A treasure chest sits on the windowsill. Do you open it? Enter yes or no.").toUpperCase();
     
     switch(chest) {
         case "YES":
-            alert("There are jewels in this chest. You take them home. Now you are rich. Game Over.");
+            alert("The chest is full of diamonds. As you reach for one, a spectre appears behind you, and you find you cannot move!");
+            TreasureRiddle();
         break;
         case "NO":
-            alert("Foolish choice. The chest and all the treasures in it disappear forever, and are you locked in the room. Game Over.");
+            alert("Not caring for material possesions, you choose not to open the chest. You return to the main level of the castle, and make your way home safely, though you are no richer than before. You win, sort of.");
         break;
         default:
             alert("Please enter yes or no.");
     }
 }
 
-function leftEnterMansion() {
-    var downOrUp = prompt("There is a staircase leading upstairs and a staircase leading downstairs. Which one do you choose? Enter up or down.").toUpperCase();
+function leftEnterCastle() {
+    var downOrUp = prompt("You enter the castle to find a cavernous, empty room. Do you descend into the dungeons, or climb the castle tower? Enter descend or climb.").toUpperCase();
     
     switch(downOrUp) {
-        case "UP":
-            mansionUp();
+        case "CLIMB":
+            CastleUp();
         break;
-        case "DOWN":
-            alert("Uh oh. Looks like there's a pit of lava in the basement. You are never heard from again.");
+        case "DESCEND":
+            alert("You wander down into the dark dungeons, accidentally slipping into a cell. The door locks behind you...Game over. ");
         break;
         default:
-            alert("Please enter up or down.");
+            alert("Please enter descend or climb.");
         downOrUp();
     }
 }
@@ -81,11 +96,11 @@ function leftSafe() {
 }
 
 function goLeft() {
-    var mansionChoose = prompt("You choose the left path. Further down the road, a great castle looms. Do you go inside? Enter yes or no.").toUpperCase();
+    var CastleChoose = prompt("You choose the left path. Further down the road, a great castle looms. Do you go inside? Enter yes or no.").toUpperCase();
     
-    switch(mansionChoose) {
+    switch(CastleChoose) {
         case "YES":
-            leftEnterMansion();
+            leftEnterCastle();
         break;
         case "NO":
             leftSafe();
@@ -193,7 +208,7 @@ function goRight() {
     }    
 }
 
-function adventure() {
+function ChooseYourAdventure() {
     var leftOrRight = prompt("You are an old warrior returning home from battle. The road diverges as you near your home. \nDo you go left or right?").toUpperCase();
     
     switch(leftOrRight) {
@@ -205,11 +220,11 @@ function adventure() {
         break;
         default:
             alert("Please enter either left or right");
-            adventure();
+            ChooseYourAdventure();
     }
 }
 
-adventure();
+ChooseYourAdventure();
 
 
 </script>
